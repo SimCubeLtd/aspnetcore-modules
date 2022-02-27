@@ -8,32 +8,42 @@ on:
 jobs:
   build_pack_and_push:
     if: github.ref == 'refs/heads/master' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
-    runs-on: simcube-devserver
+    runs-on: ubuntu-latest
+    env:
+      DOTNET_NOLOGO: true
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
 
       - name: Clean Artifacts
         run: rm -f artifacts/*
 
       - name: Restore
+      - uses: actions/setup-dotnet@v1
         run: |
            dotnet restore ./Simcube.AspNetCore.Modules.sln
 
       - name: Build
+      - uses: actions/setup-dotnet@v1
         run: |
            dotnet build ./Simcube.AspNetCore.Modules.sln --configuration Release --no-restore
 
       - name: Test
+      - uses: actions/setup-dotnet@v1
         run: |
            dotnet test ./Simcube.AspNetCore.Modules.sln --no-restore --no-build --configuration Release
 
       - name: Pack
+      - uses: actions/setup-dotnet@v1
         env:
           patch_version: ${{ github.run_number }}
         run: |
            dotnet pack src/Simcube.AspNetCore.Modules/Simcube.AspNetCore.Modules.csproj --configuration Release -o artifacts -p:PackageVersion=1.0.$patch_version --no-restore --no-build
            
       - name: Push Client Package to Nuget
+      - uses: actions/setup-dotnet@v1
         env:
           nuget_key: ${{ secrets.NUGET }}
         run: dotnet nuget push --source https://api.nuget.org/v3/index.json --api-key $nuget_key artifacts/*.nupkg
