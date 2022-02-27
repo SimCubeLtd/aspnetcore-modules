@@ -6,6 +6,15 @@
         <Nullable>enable</Nullable>
         <OutputType>Library</OutputType>
         <RootNamespace>Simcube.AspNetCore.Modules.Microsoft</RootNamespace>
+        <IsPackable>true</IsPackable>
+        <Title>Simcube.AspNetCore.Modules</Title>
+        <Authors>David Sekula</Authors>
+        <Description>Minimal Api modules made simple</Description>
+        <Copyright>Sim Cube Ltd 2022</Copyright>
+        <PackageProjectUrl>https://github.com/SimCubeLtd/aspnetcore-modules</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/SimCubeLtd/aspnetcore-modules/blob/master/LICENSE.md</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/SimCubeLtd/aspnetcore-modules</RepositoryUrl>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     </PropertyGroup>
 
 </Project>

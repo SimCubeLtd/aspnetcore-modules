@@ -44,7 +44,7 @@ jobs:
       - name: Pack
         env:
           patch_version: ${{ github.run_number }}
-        run: dotnet pack src/Simcube.AspNetCore.Modules/Simcube.AspNetCore.Modules.csproj --configuration Release -o artifacts -p:PackageVersion=1.0.$patch_version --no-restore --no-build
+        run: dotnet pack src/Simcube.AspNetCore.Modules/Simcube.AspNetCore.Modules.csproj --configuration Release -o ./artifacts -p:PackageVersion=1.0.$patch_version --no-restore --no-build
            
       - uses: actions/setup-dotnet@v1
         with:
@@ -52,4 +52,4 @@ jobs:
       - name: Push Client Package to Nuget
         env:
           nuget_key: ${{ secrets.NUGET }}
-        run: dotnet nuget push --source https://api.nuget.org/v3/index.json --api-key $nuget_key artifacts/*.nupkg
+        run: dotnet nuget push --source https://api.nuget.org/v3/index.json --api-key $nuget_key ./artifacts/*.nupkg
