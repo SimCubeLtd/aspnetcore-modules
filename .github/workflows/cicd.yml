@@ -20,36 +20,21 @@ jobs:
       - name: Clean Artifacts
         run: rm -f artifacts/*
 
-      - uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: '6.0.x'
       - name: Restore
         run: dotnet restore ./Simcube.AspNetCore.Modules.sln
 
-      - uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: '6.0.x'
       - name: Build
         run: dotnet build ./Simcube.AspNetCore.Modules.sln --configuration Release --no-restore
 
-      - uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: '6.0.x'
       - name: Test
         run: dotnet test ./Simcube.AspNetCore.Modules.sln --no-restore --no-build --configuration Release
 
-      - uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: '6.0.x'
       - name: Pack
         env:
           patch_version: ${{ github.run_number }}
         run: dotnet pack src/Simcube.AspNetCore.Modules/Simcube.AspNetCore.Modules.csproj --configuration Release -o ./artifacts -p:PackageVersion=1.0.$patch_version --no-restore --no-build
            
-      - uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: '6.0.x'
-      - name: Push Client Package to Nuget
+      - name: Push Package to Nuget
         env:
           nuget_key: ${{ secrets.NUGET }}
         run: dotnet nuget push --source https://api.nuget.org/v3/index.json --api-key $nuget_key ./artifacts/*.nupkg

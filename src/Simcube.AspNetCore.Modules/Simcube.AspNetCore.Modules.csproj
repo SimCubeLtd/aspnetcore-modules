@@ -12,7 +12,7 @@
         <Description>Minimal Api modules made simple</Description>
         <Copyright>Sim Cube Ltd 2022</Copyright>
         <PackageProjectUrl>https://github.com/SimCubeLtd/aspnetcore-modules</PackageProjectUrl>
-        <PackageLicenseUrl>https://github.com/SimCubeLtd/aspnetcore-modules/blob/master/LICENSE.md</PackageLicenseUrl>
+        <PackageLicense>https://github.com/SimCubeLtd/aspnetcore-modules/blob/master/LICENSE.md</PackageLicense>
         <RepositoryUrl>https://github.com/SimCubeLtd/aspnetcore-modules</RepositoryUrl>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     </PropertyGroup>
