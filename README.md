@@ -1,4 +1,7 @@
 # Simcube.AspNetCore.Modules
+
+[![CI/CD Pipeline](https://github.com/SimCubeLtd/aspnetcore-modules/actions/workflows/cicd.yml/badge.svg?branch=master)](https://github.com/SimCubeLtd/aspnetcore-modules/actions/workflows/cicd.yml)    ![Nuget](https://img.shields.io/nuget/v/Simcube.AspNetCore.Modules?style=flat-square)
+
 ## _Simple Module Support To Facilitate in Minimal Api Vertical Slicing_
 
 Organize your project by domain, not technical slices!
@@ -20,7 +23,7 @@ public class InfoModule: IModule
     public IEndpointRouteBuilder MapEndpoints(IEndpointRouteBuilder endpoints)
     {
         endpoints.MapGet("/info", () => {
-            
+            ...
         });
         endpoints.MapPost("/info", () => {
             ...
@@ -42,7 +45,7 @@ app.MapModuleEndpoints();
 app.Run();
 ```
 ## Sample
-See the Sample project [here](https://github.com/SimCubeLtd/aspnetcore-modules/src/Simcube.AspNetCore.Modules.Sample)
+See the Sample project [here](https://github.com/SimCubeLtd/aspnetcore-modules/tree/master/src/Simcube.AspNetCore.Modules.Sample)
 
 ## License
 
