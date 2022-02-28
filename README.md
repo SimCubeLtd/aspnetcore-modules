@@ -23,7 +23,7 @@ public class InfoModule: IModule
     public IEndpointRouteBuilder MapEndpoints(IEndpointRouteBuilder endpoints)
     {
         endpoints.MapGet("/info", () => {
-            
+            ...
         });
         endpoints.MapPost("/info", () => {
             ...
@@ -45,7 +45,7 @@ app.MapModuleEndpoints();
 app.Run();
 ```
 ## Sample
-See the Sample project [here](https://github.com/SimCubeLtd/aspnetcore-modules/src/Simcube.AspNetCore.Modules.Sample)
+See the Sample project [here](https://github.com/SimCubeLtd/aspnetcore-modules/tree/master/src/Simcube.AspNetCore.Modules.Sample)
 
 ## License
 
