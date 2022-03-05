@@ -4,5 +4,6 @@ builder.RegisterModules();
 
 var app = builder.Build();
 app.MapModuleEndpoints();
+app.ExecuteModulePreRunActions();
 
 app.Run();

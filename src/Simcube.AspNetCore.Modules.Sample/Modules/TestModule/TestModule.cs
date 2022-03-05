@@ -20,4 +20,9 @@ public class TestModule : ModuleBase
 
         return endpoints;
     }
+
+    public override void ExecuteModulePreRunActions(WebApplication app)
+    {
+        Console.WriteLine($"Registered {nameof(TestModule)} Successfully");
+    }
 }

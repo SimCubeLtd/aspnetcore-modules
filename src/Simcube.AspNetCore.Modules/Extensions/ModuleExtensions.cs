@@ -27,6 +27,16 @@ public static class ModuleExtensions
         return app;
     }
 
+    public static WebApplication ExecuteModulePreRunActions(this WebApplication app)
+    {
+        foreach (var module in app.Services.GetServices<IModule>())
+        {
+            module.ExecuteModulePreRunActions(app);
+        }
+
+        return app;
+    }
+
     private static IEnumerable<IModule> DiscoverModules()
     {
         var modules = new List<IModule>();

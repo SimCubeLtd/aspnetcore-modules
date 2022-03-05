@@ -20,4 +20,9 @@ public class InfoModule : ModuleBase
 
         return endpoints;
     }
+
+    public override void ExecuteModulePreRunActions(WebApplication app)
+    {
+        Console.WriteLine($"Registered {nameof(InfoModule)} Successfully");
+    }
 }

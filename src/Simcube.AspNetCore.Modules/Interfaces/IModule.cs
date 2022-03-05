@@ -20,4 +20,10 @@ public interface IModule
     /// <param name="endpoints">The endpoints builder instance.</param>
     /// <returns>The endpoints builder instance, with the module endpoints successfully registered.</returns>
     IEndpointRouteBuilder MapEndpoints(IEndpointRouteBuilder endpoints);
+
+    /// <summary>
+    /// Pre Run Actions.
+    /// </summary>
+    /// <param name="app">The built WebApplication instace.</param>
+    void ExecuteModulePreRunActions(WebApplication app);
 }

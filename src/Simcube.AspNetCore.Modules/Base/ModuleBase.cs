@@ -13,4 +13,8 @@ public abstract class ModuleBase : IModule
     {
         return endpoints;
     }
+
+    public virtual void ExecuteModulePreRunActions(WebApplication app)
+    {
+    }
 }
