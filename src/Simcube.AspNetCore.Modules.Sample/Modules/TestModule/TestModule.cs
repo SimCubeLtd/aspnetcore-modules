@@ -6,7 +6,7 @@ namespace Simcube.AspNetCore.Modules.Sample.Modules.TestModule;
 
 public class TestModule : ModuleBase
 {
-    public override IServiceCollection RegisterModule(IServiceCollection services)
+    public override IServiceCollection RegisterModule(IServiceCollection services, IConfiguration configuration)
     {
         services.AddSingleton(new TestConfig());
 

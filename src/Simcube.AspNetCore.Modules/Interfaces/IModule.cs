@@ -10,14 +10,7 @@ public interface IModule
     /// Register the collection within the service collection, and ultimately the service provider.
     /// </summary>
     /// <param name="services">The service collection to register in</param>
-    /// <returns>The provided service collection, with the module registered in it.</returns>
-    IServiceCollection RegisterModule(IServiceCollection services);
-
-    /// <summary>
-    /// Register the collection within the service collection, and ultimately the service provider.
-    /// </summary>
-    /// <param name="services">The service collection to register in</param>
-    /// <param name="configuration">Configuration instance to use in Registration</param>
+    /// <param name="configuration">The Configuration instance to use in Registration</param>
     /// <returns>The provided service collection, with the module registered in it.</returns>
     IServiceCollection RegisterModule(IServiceCollection services, IConfiguration configuration);
 

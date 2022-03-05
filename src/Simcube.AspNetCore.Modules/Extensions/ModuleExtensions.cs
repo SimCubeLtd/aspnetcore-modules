@@ -9,7 +9,8 @@ public static class ModuleExtensions
     {
         foreach (var module in DiscoverModules())
         {
-            module.RegisterModule(builder.Services);
+            module.RegisterModule(builder.Services, builder.Configuration);
+
             builder.Services.AddSingleton(module);
         }
 

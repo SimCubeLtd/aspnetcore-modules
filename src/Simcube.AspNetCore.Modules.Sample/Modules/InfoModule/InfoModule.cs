@@ -6,16 +6,11 @@ namespace Simcube.AspNetCore.Modules.Sample.Modules.InfoModule;
 
 public class InfoModule : ModuleBase
 {
-    public override IServiceCollection RegisterModule(IServiceCollection services)
+    public override IServiceCollection RegisterModule(IServiceCollection services, IConfiguration configuration)
     {
         services.AddSingleton(new InfoConfig());
 
         return services;
-    }
-
-    public override IServiceCollection RegisterModule(IServiceCollection services, IConfiguration configuration)
-    {
-        throw new NotImplementedException();
     }
 
     public override IEndpointRouteBuilder MapEndpoints(IEndpointRouteBuilder endpoints)
