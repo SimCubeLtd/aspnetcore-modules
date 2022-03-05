@@ -44,7 +44,7 @@ public static class ModuleExtensions
     {
         return assembly
             .GetTypes()
-            .Where(p => p.IsClass && p.IsAssignableTo(typeof(IModule)))
+            .Where(p => p.IsClass && !p.IsAbstract && p.IsAssignableTo(typeof(IModule)))
             .Select(Activator.CreateInstance)
             .Cast<IModule>();
     }
